@@ -11,7 +11,7 @@ public class generate {
 
 		// 将四元组转换成三元组
 		nQuadsToTriples nToTriples = new nQuadsToTriples();
-		nToTriples.nqToNt("annotateDate.nq", "annotateDate.nt");
+		nToTriples.nqToNt("annotateGeo.nq", "annotateGeo.nt");
 
 		// 生成时间注释
 		// annotateDate aDate = new annotateDate();
@@ -20,5 +20,10 @@ public class generate {
 		// 生成制造商
 		// annotateCreator aCreator = new annotateCreator();
 		// aCreator.annotate_Creator("annotateID.nq", "annotateCreator.nq");
+
+		// 生成经纬度
+		// annotateGeo aGeo = new annotateGeo();
+		// aGeo.annotate_Creator("annotateID.nq", "annotateGeo.nq");
+
 	}
 }
