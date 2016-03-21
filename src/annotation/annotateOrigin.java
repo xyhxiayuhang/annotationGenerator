@@ -16,7 +16,7 @@ public class annotateOrigin {
 		try {
 			BufferedReader bfReader = new BufferedReader(new FileReader(inputfile));
 			String aLine = null;// 从输入文件中读取一行存入aLine
-			FileWriter fileWriter = new FileWriter(outputfile.getName(), true);
+			FileWriter fileWriter = new FileWriter(outputfile.getAbsolutePath(), true);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 			randomID rId = new randomID();
 			String origin = " <http://yago-knowledge.org/resource/origin> ";

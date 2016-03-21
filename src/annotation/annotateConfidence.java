@@ -16,7 +16,7 @@ public class annotateConfidence {
 		try {
 			BufferedReader bfReader = new BufferedReader(new FileReader(inputfile));
 			String aLine = null;// 从输入文件中读取一行存入aLine
-			FileWriter fileWriter = new FileWriter(outputfile.getName(), true);
+			FileWriter fileWriter = new FileWriter(outputfile.getAbsolutePath(), true);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 			randomID rId = new randomID();// 获取随机ID对象
 			String id = null;// ID的完整形式
@@ -25,7 +25,7 @@ public class annotateConfidence {
 				id = aLine.substring(aLine.lastIndexOf("<"), aLine.lastIndexOf(">") + 1);
 				confidenceString = " <http://yago-knowledge.org/resource/confidence> ";
 				confidenceID = "<http://yago-knowledge.org/resource/" + rId.random_ID() + ">.\n";
-				confidence = randomGaussian.Gaussian(0.8, 1.0);
+				confidence = randomGaussian.Gaussian();
 				bufferedWriter.write(id + confidenceString + confidence + confidenceID);
 			}
 			bfReader.close();

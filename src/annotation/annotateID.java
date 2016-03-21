@@ -12,10 +12,11 @@ public class annotateID {
 	public void annotate_ID(String input, String output) {
 		File inputfile = new File(input);
 		File outputfile = new File(output);
+
 		try {
 			BufferedReader bfReader = new BufferedReader(new FileReader(inputfile));
 			String aLine = null;// 从输入文件中读取一行存入aLine
-			FileWriter fileWriter = new FileWriter(outputfile.getName(), true);
+			FileWriter fileWriter = new FileWriter(outputfile.getAbsolutePath(), true);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 			randomID rId = new randomID();// 获取随机ID对象
 			String id = null;// ID的完整形式
