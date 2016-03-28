@@ -20,10 +20,10 @@ public class annotateGeo {
 			FileWriter fileWriter = new FileWriter(outputfile.getAbsolutePath(), true);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 			randomID rId = new randomID();
-			randomName rName = new randomName();
+
 			String LON, LAT, latString, lonString;
 			DecimalFormat df = new DecimalFormat("######0.0000");
-			String id, idMeta, latID, lonID;// 获得的ID的完整形式和描述三元组的ID
+			String id, latID, lonID;// 获得的ID的完整形式和描述三元组的ID
 			randomLatitudeAndLongitude rLongitude = new randomLatitudeAndLongitude();
 			while ((aLine = bfReader.readLine()) != null) {
 				id = aLine.substring(aLine.lastIndexOf("<"), aLine.lastIndexOf(">") + 1);

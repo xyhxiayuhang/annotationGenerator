@@ -16,7 +16,7 @@ public class randomLatitudeAndLongitude {
 		double lon;
 		String LON;
 		DecimalFormat df = new DecimalFormat("######0.0000");
-		lon = this.randomFloatDataGenerater(-180.0, 180.0);
+		lon = this.randomFloatDataGenerater(20.0, 120.0);
 		LON = df.format(lon);
 		return LON;
 	}
@@ -26,7 +26,7 @@ public class randomLatitudeAndLongitude {
 		double lat;
 		String LAT;
 		DecimalFormat df = new DecimalFormat("######0.0000");
-		lat = this.randomFloatDataGenerater(-180.0, 180.0);
+		lat = this.randomFloatDataGenerater(23.5, 66.3);
 		LAT = df.format(lat);
 		return LAT;
 	}

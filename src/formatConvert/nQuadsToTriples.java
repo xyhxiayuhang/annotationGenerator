@@ -10,13 +10,13 @@ import java.io.IOException;
 //将四元组转换成含有hasS、hasP、hasO的三元组形式
 public class nQuadsToTriples {
 
-	public void nqToNt(String input, String output) {
+	public static void nqToNt(String input, String output) {
 		File inputfile = new File(input);
 		File outputfile = new File(output);
 		try {
 			BufferedReader bfReader = new BufferedReader(new FileReader(inputfile));
 			String aLine = null;// 从输入文件中读取一行存入aLine
-			FileWriter fileWriter = new FileWriter(outputfile.getName(), true);
+			FileWriter fileWriter = new FileWriter(outputfile.getAbsolutePath(), true);// 获得绝对路径
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 			String spo, s, p, o, g, po, hasS, hasP, hasO;
 			while ((aLine = bfReader.readLine()) != null) {

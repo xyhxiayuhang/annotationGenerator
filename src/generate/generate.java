@@ -1,6 +1,8 @@
 package generate;
 
-import annotation.annotateConfidence;
+import java.util.Date;
+
+import formatConvert.nQuadsToTriples;
 
 public class generate {
 
@@ -30,12 +32,15 @@ public class generate {
 		// "D:/data/annotateOrigin.nq");
 
 		// 生成置信度
-		annotateConfidence aConfidence = new annotateConfidence();
-		aConfidence.annotate_Confidence("D:/data/annotateID.nq", "D:/data/annotateConfidence.nq");
+		// annotateConfidence aConfidence = new annotateConfidence();
+		// aConfidence.annotate_Confidence("D:/data/annotateID.nq",
+		// "D:/data/annotateConfidence.nq");
 
 		// 将四元组转换成三元组
 		// nQuadsToTriples nToTriples = new nQuadsToTriples();
 		// nToTriples.nqToNt("annotateConfidence.nq", "annotateConfidence.nt");
-
+		System.out.println(new Date());
+		nQuadsToTriples.nqToNt("D:/annotateQuad.nq", "D:/annotateTriples.nt");
+		System.out.println(new Date());
 	}
 }
