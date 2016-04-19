@@ -8,12 +8,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
 
-import random.randomDate;
+import random.randomGaussianDate;
 import random.randomID;
 
-public class annotateDate {
+public class annotateGuassianDate {
 
-	// 输入为带ID注释的文件，输出为带日期注释的文件
+	// 输入为带ID注释的文件，输出为服从高斯分布的带日期注释的文件
 	public void annotate_Date(String input, String output) {
 		File inputfile = new File(input);
 		File outputfile = new File(output);
@@ -41,11 +41,13 @@ public class annotateDate {
 				endPoint = "<http://franz.com/ns/allegrograph/3.0/temporal/endpoint> ";
 				start = "<http://yago-knowledge.org/resource/" + commonID + "Start> ";
 				end = "<http://yago-knowledge.org/resource/" + commonID + "End> ";
-				dateStart = randomDate.RandomDate("2012-06-01T00:00:00.235-0700", "2015-12-30T00:00:00.235-0700");// 生成时间格式为2014-06-12T00:12:00
+
+				dateStart = randomGaussianDate.RandomGaussianDate(1000, 100000000);
 				dateStartToString = String.format("%1$tY-%1$tm-%1$tdT%1$tH:%1$tM:%1$tS", dateStart);// 将日期转为字符串格式，取短格式。开始时间
-				dateEndToString = dateStartToString + ".235-0700";
-				dateEnd = randomDate.RandomDate(dateEndToString, "2015-12-31T00:00:00.235-0700");
+
+				dateEnd = randomGaussianDate.RandomGaussianDate(100000000, 1000000000);
 				dateEndToString = String.format("%1$tY-%1$tm-%1$tdT%1$tH:%1$tM:%1$tS", dateEnd);// 结束时间
+
 				// 得到规范的datetime格式
 				startTime = "\"" + dateStartToString + "\"" + "^^<http://www.w3.org/2001/XMLSchema#dateTime>";
 				endTime = "\"" + dateEndToString + "\"" + "^^<http://www.w3.org/2001/XMLSchema#dateTime>";

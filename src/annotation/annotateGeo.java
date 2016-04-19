@@ -8,6 +8,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
+import random.randomID;
+import random.randomLatitudeAndLongitude;
+
 public class annotateGeo {
 
 	// 输入为带ID注释的文件，输出为带地理标注的文件

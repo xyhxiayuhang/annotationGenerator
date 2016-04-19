@@ -1,9 +1,9 @@
-package annotation;
+package random;
 
 import java.util.Random;
 
 //生成符合高斯分布的置信度
-public class randomGaussian {
+public class randomGaussianConfidence {
 
 	public static String Gaussian() {
 		Random random = new Random();
@@ -19,7 +19,7 @@ public class randomGaussian {
 		while (result > 1)
 			result = random.nextGaussian() / 30.0 + 0.9;// 保证置信度不会大于1，虽然大于1的概率微乎其微
 		Gaussian = String.format("%.3f", result);
-		return "\"" + Gaussian + "\"" + "^^<http://www.w3.org/2001/XMLSchema#float> ";
+		return Gaussian;
 	}
 
 	public static double randomDataGenerater(double min, double max) {

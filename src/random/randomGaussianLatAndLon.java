@@ -1,8 +1,8 @@
-package annotation;
+package random;
 
 import java.text.DecimalFormat;
 
-public class randomLatitudeAndLongitude {
+public class randomGaussianLatAndLon {
 
 	// 生成随机浮点数
 	public double randomFloatDataGenerater(double min, double max) {

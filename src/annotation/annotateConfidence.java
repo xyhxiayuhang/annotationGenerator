@@ -7,9 +7,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import random.randomConfidence;
+import random.randomID;
+
 public class annotateConfidence {
 
-	// 输入为带ID注释的文件，输出为带置信度标注的文件
+	// 输入为带ID注释的文件，输出为带随机分布的置信度标注的文件
 	public void annotate_Confidence(String input, String output) {
 		File inputfile = new File(input);
 		File outputfile = new File(output);
@@ -25,7 +28,8 @@ public class annotateConfidence {
 				id = aLine.substring(aLine.lastIndexOf("<"), aLine.lastIndexOf(">") + 1);
 				confidenceString = " <http://yago-knowledge.org/resource/confidence> ";
 				confidenceID = "<http://yago-knowledge.org/resource/" + rId.random_ID() + ">.\n";
-				confidence = randomGaussian.Gaussian();
+				confidence = "\"" + randomConfidence.Confidence() + "\""
+						+ "^^<http://www.w3.org/2001/XMLSchema#float> ";
 				bufferedWriter.write(id + confidenceString + confidence + confidenceID);
 			}
 			bfReader.close();

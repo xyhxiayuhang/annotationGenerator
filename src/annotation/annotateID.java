@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import random.randomID;
+
 public class annotateID {
 
 	public void annotate_ID(String input, String output) {

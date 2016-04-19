@@ -1,4 +1,4 @@
-package annotation;
+package random;
 
 //Éú³ÉËæ»úID
 public class randomID {

@@ -1,4 +1,4 @@
-package annotation;
+package random;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,6 +17,7 @@ public class randomDate {
 			long date = random(start.getTime(), end.getTime());
 
 			return new Date(date);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

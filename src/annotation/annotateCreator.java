@@ -7,6 +7,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import random.randomID;
+import random.randomName;
+
 public class annotateCreator {
 
 	// 输入为带ID注释的文件，输出为带生产者标注的文件

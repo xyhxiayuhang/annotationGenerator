@@ -1,4 +1,4 @@
-package annotation;
+package random;
 
 import java.util.Random;
 
