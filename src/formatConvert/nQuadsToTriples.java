@@ -28,9 +28,9 @@ public class nQuadsToTriples {
 				o = po.substring(po.indexOf(">") + 2, po.length());// 得到o
 
 				// 组合成hasS、hasP、hasO的格式
-				hasS = g + " <http://yago-knowledge.org/resource/hasS> " + s + ".\n";
-				hasP = g + " <http://yago-knowledge.org/resource/hasP> " + p + ".\n";
-				hasO = g + " <http://yago-knowledge.org/resource/hasO> " + o + ".\n";
+				hasS = g + " <http://yago-knowledge.org/resource/hasS> " + s + " .\n";
+				hasP = g + " <http://yago-knowledge.org/resource/hasP> " + p + " .\n";
+				hasO = g + " <http://yago-knowledge.org/resource/hasO> " + o + " .\n";
 
 				bufferedWriter.write(hasS + hasP + hasO);
 			}

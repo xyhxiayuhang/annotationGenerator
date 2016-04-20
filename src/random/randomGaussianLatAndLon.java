@@ -1,33 +1,26 @@
 package random;
 
-import java.text.DecimalFormat;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.HashMap;
 
 public class randomGaussianLatAndLon {
 
-	// 生成随机浮点数
-	public double randomFloatDataGenerater(double min, double max) {
-		double temp;
-		temp = (double) (Math.random() * (max - min)) + min;
-		return temp;
-	}
+	public static HashMap<String, String> gaussianLatAndLon(String inputFile) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		File file = new File(inputFile);
+		try {
+			BufferedReader Reader = new BufferedReader(new FileReader(file.getAbsolutePath()));
+			String line;
+			while ((line = Reader.readLine()) != null) {
+				map.put(line.substring(0, line.indexOf(",")), line.substring(line.indexOf(",") + 2, line.length()));
+			}
+			Reader.close();
 
-	// 生成随机经度
-	public String randomLongitude() {
-		double lon;
-		String LON;
-		DecimalFormat df = new DecimalFormat("######0.0000");
-		lon = this.randomFloatDataGenerater(20.0, 120.0);
-		LON = df.format(lon);
-		return LON;
-	}
-
-	// 生成随机纬度
-	public String randomLatitude() {
-		double lat;
-		String LAT;
-		DecimalFormat df = new DecimalFormat("######0.0000");
-		lat = this.randomFloatDataGenerater(23.5, 66.3);
-		LAT = df.format(lat);
-		return LAT;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return map;
 	}
 }
